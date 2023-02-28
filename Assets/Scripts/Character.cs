@@ -45,9 +45,9 @@ public class Character : MonoBehaviour
     public void UpdateGrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
-        //Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
 
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
             grounded = true;
         }
