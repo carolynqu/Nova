@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
 {
     SpriteRenderer mySpriteRenderer;
     Rigidbody2D rb2d;
+    GravityControl gravity;
 
     public float speed = 5;
     public float jumpForce = 5;
@@ -20,13 +21,15 @@ public class Character : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        gravity = GetComponent<GravityControl>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-        GravityFlip();
+        gravity.GravityFlip(rb2d);
     }
 
     public void Movement()
@@ -53,23 +56,6 @@ public class Character : MonoBehaviour
     //    }
 
     //}
-
-    public void GravityFlip()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb2d.velocity = new Vector2(0, 0);
-
-            if(rb2d.gravityScale > 0)
-            {
-                rb2d.gravityScale = -5f;
-            }
-            else
-            {
-                rb2d.gravityScale = 5f;
-            }
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
