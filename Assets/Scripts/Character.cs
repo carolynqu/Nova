@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
     void Update()
     {
         Movement();
+        GravityFlip();
     }
 
     public void Movement()
@@ -56,6 +57,13 @@ public class Character : MonoBehaviour
             grounded = false;
         }
 
+    }
 
+    public void GravityFlip()
+    {
+        if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
+        {
+            Physics2D.gravity *= -1;
+        }
     }
 }
