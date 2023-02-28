@@ -31,39 +31,42 @@ public class Character : MonoBehaviour
     public void Movement()
     {
         Vector2 movement = rb2d.velocity;
-        UpdateGrounded();
         movement.x = Input.GetAxis("Horizontal") * speed;
-
-        if (Input.GetKey(KeyCode.Space) && grounded)
-        {
-            movement.y = jumpForce;
-        }
 
         rb2d.velocity = movement;
 
     }
 
-    public void UpdateGrounded()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
-        Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
+    //public void UpdateGrounded()
+    //{
+    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
+    //    Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
 
-        if (hit.collider != null)
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
-        }
+    //    if (hit.collider != null)
+    //    {
+    //        grounded = true;
+    //    }
+    //    else
+    //    {
+    //        grounded = false;
+    //    }
 
-    }
+    //}
 
     public void GravityFlip()
     {
-        if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Physics2D.gravity *= -1;
+            rb2d.velocity = new Vector2(0, 0);
+
+            if(rb2d.gravityScale > 0)
+            {
+                rb2d.gravityScale = -5f;
+            }
+            else
+            {
+                rb2d.gravityScale = 5f;
+            }
         }
     }
 }
