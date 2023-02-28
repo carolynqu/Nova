@@ -12,11 +12,11 @@ public class GravityControl : MonoBehaviour
 
             if (rb2d.gravityScale > 0)
             {
-                rb2d.gravityScale = -5f;
+                rb2d.gravityScale = -8f;
             }
             else
             {
-                rb2d.gravityScale = 5f;
+                rb2d.gravityScale = 8f;
             }
         }
     }
