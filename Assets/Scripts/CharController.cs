@@ -13,8 +13,7 @@ public class CharController : Controller2D
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
         Movement();
         GravityFlip();
         UpdateGrounding();

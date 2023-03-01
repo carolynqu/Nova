@@ -32,9 +32,9 @@ public abstract class Controller2D : MonoBehaviour
 
         Vector2 movement = rb2d.velocity;
         movement.x = Input.GetAxis("Horizontal") * speed;
+        playerVelocity = rb2d.velocity;
 
         rb2d.velocity = movement;
-        playerVelocity = rb2d.velocity;
 
     }
 

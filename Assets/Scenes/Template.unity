@@ -241,12 +241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff36fb56c0f9445969258425b5f5e59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 2081630129}
   speed: 0
-  globalMaxX: 0
-  globalMaxY: 0
-  globalMinX: 0
-  globalMinY: 0
+  globalMaxX: 20
+  globalMaxY: 20
+  globalMinX: -20
+  globalMinY: -20
 --- !u!1 &1980345459
 GameObject:
   m_ObjectHideFlags: 0
