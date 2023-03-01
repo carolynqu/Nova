@@ -22,7 +22,7 @@ public class Animator2D : MonoBehaviour
     private Dictionary<AnimationState, Sprite[]> animationAtlas;
 
     private Rigidbody2D rb2D;
-    private Character controller;
+    private Controller2D controller;
     private SpriteRenderer sRenderer;
 
 
@@ -35,7 +35,7 @@ public class Animator2D : MonoBehaviour
 
         rb2D = GetComponent<Rigidbody2D>();
         sRenderer = GetComponent<SpriteRenderer>();
-        controller = GetComponent<Character>();
+        controller = GetComponent<Controller2D>();
     }
 
     // Update is called once per frame
@@ -60,12 +60,12 @@ public class Animator2D : MonoBehaviour
 
         if (controller.playerVelocity.x < -0.01f)
         {
-            sRenderer.flipX = false;
+            sRenderer.flipX = true;
         }
 
         if (controller.playerVelocity.x > 0.01f)
         {
-            sRenderer.flipX = true;
+            sRenderer.flipX = false;
         }
     }
 

@@ -7,7 +7,7 @@ public class LevelRestart : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Character controller = collision.gameObject.GetComponent<Character>();
+        Controller2D controller = collision.gameObject.GetComponent<Controller2D>();
         if(controller != null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

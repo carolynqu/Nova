@@ -3,60 +3,57 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Character : MonoBehaviour
+public abstract class Controller2D : MonoBehaviour
 {
-    SpriteRenderer mySpriteRenderer;
-    Rigidbody2D rb2d;
+   
+    protected Rigidbody2D rb2d;
     public GravityControl gravity;
 
     public float speed = 5;
     public float jumpForce = 5;
 
-    public bool grounded = false;
+    public bool grounded;
     public LayerMask groundMask;
 
-    public Vector2 playerVelocity;
+    [HideInInspector] public Vector2 playerVelocity = new Vector2();
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        mySpriteRenderer = GetComponent<SpriteRenderer>();
+        
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Movement();
-        GravityFlip();
-        playerVelocity = rb2d.velocity;
-    }
-
+    
     public void Movement()
     {
+
         Vector2 movement = rb2d.velocity;
         movement.x = Input.GetAxis("Horizontal") * speed;
 
         rb2d.velocity = movement;
+        playerVelocity = rb2d.velocity;
 
     }
 
-    //public void UpdateGrounded()
-    //{
-    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
-    //    Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
+    protected bool UpdateGrounding()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
 
-    //    if (hit.collider != null)
-    //    {
-    //        grounded = true;
-    //    }
-    //    else
-    //    {
-    //        grounded = false;
-    //    }
+        if (hit.collider != null)
+        {
+            grounded = true;
+            return true;
+        }
+        
+        grounded = false;
 
-    //}
+        return false;
+    }
+
     public void GravityFlip()
     {
         if (Input.GetKeyDown(KeyCode.Space))
