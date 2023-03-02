@@ -16,15 +16,15 @@ public class Animator2D : MonoBehaviour
     public Sprite[] gravityAnimation;
     public Sprite[] idleAnimation;
 
+    private Controller2D controller;
+    private SpriteRenderer mySpriteRenderer;
+
+
     private float frameTimer = 0;
     private int frameIndex = 0;
     private AnimationState state = AnimationState.Idle;
     private Dictionary<AnimationState, Sprite[]> animationAtlas;
-
-    private Rigidbody2D rb2D;
-    private Controller2D controller;
-    private SpriteRenderer sRenderer;
-
+    
 
     void Start()
     {
@@ -33,8 +33,8 @@ public class Animator2D : MonoBehaviour
         animationAtlas.Add(AnimationState.Walk, walkAnimation);
         animationAtlas.Add(AnimationState.Gravity, gravityAnimation);
 
-        rb2D = GetComponent<Rigidbody2D>();
-        sRenderer = GetComponent<SpriteRenderer>();
+        
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
     }
 
@@ -54,18 +54,18 @@ public class Animator2D : MonoBehaviour
             frameTimer = 1 / animationFPS;
             Sprite[] anim = animationAtlas[state];
             frameIndex %= anim.Length;
-            sRenderer.sprite = anim[frameIndex];
+            mySpriteRenderer.sprite = anim[frameIndex];
             frameIndex++;
         }
 
         if (controller.playerVelocity.x < -0.01f)
         {
-            sRenderer.flipX = true;
+            mySpriteRenderer.flipX = true;
         }
 
         if (controller.playerVelocity.x > 0.01f)
         {
-            sRenderer.flipX = false;
+            mySpriteRenderer.flipX = false;
         }
     }
 

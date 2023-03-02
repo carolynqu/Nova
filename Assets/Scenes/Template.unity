@@ -517,13 +517,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031c439d1319f4d628b5b6fbdab3a2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationFPS: 0
+  animationFPS: 2
   walkAnimation:
   - {fileID: 1407648344, guid: 45fa93da74b564adcb09b002c066a65c, type: 3}
   - {fileID: -1011584392, guid: 45fa93da74b564adcb09b002c066a65c, type: 3}
   - {fileID: -326127394, guid: 45fa93da74b564adcb09b002c066a65c, type: 3}
-  gravityAnimation: []
-  idleAnimation: []
+  gravityAnimation:
+  - {fileID: 1313729907, guid: 45fa93da74b564adcb09b002c066a65c, type: 3}
+  idleAnimation:
+  - {fileID: -1011584392, guid: 45fa93da74b564adcb09b002c066a65c, type: 3}
 --- !u!212 &2081630128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -605,7 +607,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: {fileID: 0}
   speed: 5
-  jumpForce: 5
   grounded: 0
   groundMask:
     serializedVersion: 2

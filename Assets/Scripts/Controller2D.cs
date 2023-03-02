@@ -10,15 +10,14 @@ public abstract class Controller2D : MonoBehaviour
     public GravityControl gravity;
 
     public float speed = 5;
-    public float jumpForce = 5;
 
-    public bool grounded;
+    public bool grounded = true;
     public LayerMask groundMask;
 
     [HideInInspector] public Vector2 playerVelocity = new Vector2();
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         
@@ -27,16 +26,16 @@ public abstract class Controller2D : MonoBehaviour
 
     // Update is called once per frame
     
-    public void Movement()
-    {
+    //public void Movement()
+    //{
 
-        Vector2 movement = rb2d.velocity;
-        movement.x = Input.GetAxis("Horizontal") * speed;
-        playerVelocity = rb2d.velocity;
+    //    Vector2 movement = rb2d.velocity;
+    //    movement.x = Input.GetAxis("Horizontal") * speed;
+    //    playerVelocity = rb2d.velocity;
 
-        rb2d.velocity = movement;
+    //    rb2d.velocity = movement;
 
-    }
+    //}
 
     protected bool UpdateGrounding()
     {
@@ -50,11 +49,10 @@ public abstract class Controller2D : MonoBehaviour
         }
         
         grounded = false;
-
         return false;
     }
 
-    public void GravityFlip()
+    protected void GravityFlip()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

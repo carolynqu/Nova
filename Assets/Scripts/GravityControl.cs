@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityControl : MonoBehaviour
+public abstract class GravityControl : MonoBehaviour
 {
     public void GravityFlip(Rigidbody2D rb2d)
     {
