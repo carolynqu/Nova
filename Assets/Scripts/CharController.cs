@@ -24,6 +24,7 @@ public class CharController : Controller2D
         UpdateGrounding();
         GravityFlip();
 
+
         rb2d.velocity = movement;
     }
 }

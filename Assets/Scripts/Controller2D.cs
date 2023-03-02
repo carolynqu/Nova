@@ -11,8 +11,10 @@ public abstract class Controller2D : MonoBehaviour
 
     public float speed = 5;
 
-    public bool grounded = true;
+    public bool grounded;
     public LayerMask groundMask;
+    public float groundRay = 1.1f;
+    public float raySpread = 0.3f;
 
     [HideInInspector] public Vector2 playerVelocity = new Vector2();
 
@@ -39,17 +41,37 @@ public abstract class Controller2D : MonoBehaviour
 
     protected bool UpdateGrounding()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
-        Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, groundRay, groundMask);
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * groundRay, Color.red);
+
+        Vector3 rayStartLeft = transform.position + Vector3.up * groundRay + Vector3.left * raySpread;
+        Vector3 rayStartRight = transform.position + Vector3.up * groundRay + Vector3.right * raySpread;
+
+        RaycastHit2D hitLeft = Physics2D.Raycast(rayStartLeft, Vector2.down, groundRay * 2, groundMask);
+        RaycastHit2D hitRight = Physics2D.Raycast(rayStartRight, Vector2.down, groundRay * 2, groundMask);
+
+        Debug.DrawLine(rayStartLeft, rayStartLeft + Vector3.down * groundRay * 2, Color.red);
+        Debug.DrawLine(rayStartRight, rayStartRight + Vector3.down * groundRay * 2, Color.red);
 
         if (hit.collider != null)
         {
             grounded = true;
             return true;
         }
-        
+        else if (hitLeft.collider != null)
+        {
+            grounded = true;
+            return true;
+        }
+        else if (hitRight.collider != null)
+        {
+            grounded = true;
+            return true;
+        }
+
         grounded = false;
         return false;
+        
     }
 
     protected void GravityFlip()
@@ -60,11 +82,11 @@ public abstract class Controller2D : MonoBehaviour
 
             if (rb2d.gravityScale > 0)
             {
-                rb2d.gravityScale = -5f;
+                rb2d.gravityScale = -2f;
             }
             else
             {
-                rb2d.gravityScale = 5f;
+                rb2d.gravityScale = 2f;
             }
         }
     }
