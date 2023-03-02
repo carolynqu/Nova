@@ -54,7 +54,7 @@ public abstract class Controller2D : MonoBehaviour
 
     protected void GravityFlip()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rb2d.velocity = new Vector2(0, 0);
 

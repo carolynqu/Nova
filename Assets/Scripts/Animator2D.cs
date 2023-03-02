@@ -35,7 +35,7 @@ public class Animator2D : MonoBehaviour
 
         
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        controller = GetComponent<Controller2D>();
+        controller = GetComponent<CharController>();
     }
 
     // Update is called once per frame
