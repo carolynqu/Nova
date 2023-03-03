@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4307458080767470465}
   - component: {fileID: 4307458080767470464}
   - component: {fileID: 4307458080767470494}
+  - component: {fileID: -4134859294038002945}
   m_Layer: 6
-  m_Name: characters_4
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,3 +211,15 @@ MonoBehaviour:
   deathsound: {fileID: 0}
   objectound: {fileID: 0}
   repairsound: {fileID: 0}
+--- !u!114 &-4134859294038002945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307458080767470471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9308336826d864035b83c7adbb4ccde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

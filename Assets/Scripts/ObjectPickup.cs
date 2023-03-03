@@ -14,7 +14,7 @@ public class ObjectPickup : MonoBehaviour
         if(item != null)
         {
             other.transform.SetParent(transform);
-            other.transform.position = transform.position + Vector3.right * 0.5f;
+            other.transform.localPosition = new Vector3(0.5f, 0, 0);
             other.GetComponent<Collider2D>().enabled = false;
             pickedItem = other.gameObject;
 
@@ -22,6 +22,10 @@ public class ObjectPickup : MonoBehaviour
     }
     private void Update()
     {
+        if(pickedItem != null)
+        {
+            pickedItem.transform.localPosition = new Vector3(0.5f, 0, 0);
+        }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if(pickedItem != null)

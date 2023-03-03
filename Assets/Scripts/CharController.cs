@@ -7,7 +7,6 @@ using UnityEngine;
 public class CharController : MonoBehaviour
 {
     protected Rigidbody2D rb2d;
-    //public GravityControl gravity;
 
     public float speed = 5;
 
@@ -20,7 +19,6 @@ public class CharController : MonoBehaviour
     [HideInInspector] public Vector2 playerVelocity = new Vector2();
 
     private SpriteRenderer mySpriteRenderer;
-    private float inputX;
 
     public AudioClip jumpsound;
     public AudioClip deathsound;
@@ -38,10 +36,9 @@ public class CharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
         UpdateGrounding();
         GravityFlip();
-
+        Movement();
 
     }
 
@@ -55,7 +52,7 @@ public class CharController : MonoBehaviour
 
     }
 
-    protected bool UpdateGrounding()
+    private void UpdateGrounding()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, groundRay, groundMask);
         Debug.DrawLine(transform.position, transform.position + Vector3.down * groundRay, Color.red);
@@ -72,21 +69,21 @@ public class CharController : MonoBehaviour
         if (hit.collider != null)
         {
             grounded = true;
-            return true;
+            return;
         }
         else if (hitLeft.collider != null)
         {
             grounded = true;
-            return true;
+            return;
         }
         else if (hitRight.collider != null)
         {
             grounded = true;
-            return true;
+            return;
         }
 
         grounded = false;
-        return false;
+        return;
 
     }
 
@@ -96,7 +93,7 @@ public class CharController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0, 0);
 
-            if (rb2d.gravityScale > 0)
+            if (Physics2D.gravity.y > 0)
             {
                 Physics2D.gravity = new Vector2(0, -10);
             }
