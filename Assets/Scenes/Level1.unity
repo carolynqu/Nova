@@ -133,6 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 184985159}
   - component: {fileID: 184985158}
+  - component: {fileID: 184985163}
+  - component: {fileID: 184985162}
+  - component: {fileID: 184985161}
+  - component: {fileID: 184985160}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -207,6 +211,117 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184985160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184985157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031c439d1319f4d628b5b6fbdab3a2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFPS: 5
+  walkAnimation:
+  - {fileID: 21300000, guid: 8e8663bdd92674f8e9967a365a1aee21, type: 3}
+  - {fileID: 21300000, guid: 0428b8b759c9540cd98643dd6539c381, type: 3}
+  - {fileID: 21300000, guid: 8223fe13667564ad48b655dfcc0fc946, type: 3}
+  - {fileID: 21300000, guid: 8339c8ef4f6d24edbbdc6f00ed52f80a, type: 3}
+  - {fileID: 21300000, guid: e223b63ec99e1487a8e2f2222539128b, type: 3}
+  gravityAnimation: []
+  idleAnimation: []
+--- !u!60 &184985161
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184985157}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.35, y: 5.25}
+    newSize: {x: 0.47, y: 1.05}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.875, y: -2.625}
+      - {x: 1.1750001, y: -1.525}
+      - {x: 1.1750001, y: -0.52500004}
+      - {x: 1.075, y: 0.22500001}
+      - {x: 1.1750001, y: 1.025}
+      - {x: 1.1750001, y: 2.075}
+      - {x: 0.575, y: 2.625}
+      - {x: -0.575, y: 2.625}
+      - {x: -1.075, y: 2.275}
+      - {x: -1.1750001, y: 2.025}
+      - {x: -1.1750001, y: 1.125}
+      - {x: -1.075, y: 0.275}
+      - {x: -1.1750001, y: -0.52500004}
+      - {x: -1.1750001, y: -1.9250001}
+      - {x: -0.975, y: -2.525}
+      - {x: -0.77500004, y: -2.625}
+      - {x: -0.22500001, y: -2.625}
+      - {x: 0.025, y: -1.9250001}
+      - {x: 0.075, y: -2.625}
+--- !u!50 &184985162
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184985157}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &184985163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184985157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542539825ad4b4054bfd167409d46ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  grounded: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  groundRay: 1.1
+  raySpread: 0.3
+  jumpForce: 5
+  playerVelocity: {x: 0, y: 0}
+  jumpsound: {fileID: 0}
+  deathsound: {fileID: 0}
+  objectound: {fileID: 0}
+  repairsound: {fileID: 0}
 --- !u!1001 &605787875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 1826624232432848796, guid: 1cb4b3649940e49f888a4b1ecf181155, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 184985159}
     - target: {fileID: 1826624232432848798, guid: 1cb4b3649940e49f888a4b1ecf181155, type: 3}
       propertyPath: m_RootOrder
       value: 0
