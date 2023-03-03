@@ -9,5 +9,5 @@ public class Reparable : MonoBehaviour
         gameObject.tag = "Repaired";
     }
 }
-
+//right now reparable doesn't do anything but change the tag so just check that the tag changes to see if it works
 //tag any obstacles with obstacle, dangerous is just for the out of bounds
