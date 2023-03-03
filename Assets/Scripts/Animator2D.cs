@@ -16,7 +16,7 @@ public class Animator2D : MonoBehaviour
     public Sprite[] gravityAnimation;
     public Sprite[] idleAnimation;
 
-    private Controller2D controller;
+    private CharController controller;
     private SpriteRenderer mySpriteRenderer;
 
 

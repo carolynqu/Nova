@@ -27,7 +27,7 @@ public abstract class Controller2D : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+
     //public void Movement()
     //{
 
@@ -74,7 +74,7 @@ public abstract class Controller2D : MonoBehaviour
         
     }
 
-    protected void GravityFlip()
+    public void GravityFlip()
     {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
@@ -82,11 +82,11 @@ public abstract class Controller2D : MonoBehaviour
 
             if (rb2d.gravityScale > 0)
             {
-                rb2d.gravityScale = -2f;
+                Physics2D.gravity = new Vector2(0, -10);
             }
             else
             {
-                rb2d.gravityScale = 2f;
+                Physics2D.gravity = new Vector2(0, 10);
             }
         }
     }
