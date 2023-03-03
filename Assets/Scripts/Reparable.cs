@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Reparable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void FixIt()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameObject.tag = "Repaired";
     }
 }
+
+//tag any obstacles with obstacle, dangerous is just for the out of bounds

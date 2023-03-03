@@ -44,9 +44,9 @@ public class ObjectPickup : MonoBehaviour
         Reparable item = other.GetComponent<Reparable>();
         if(item != null)
         {
-            if (pickedItem != null)
+            if (pickedItem != null && other.CompareTag("Obstacle"))
             {
-                //item.FixIt();
+                item.FixIt();
             }
         }
         

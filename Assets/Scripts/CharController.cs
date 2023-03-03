@@ -14,6 +14,7 @@ public class CharController : MonoBehaviour
     public LayerMask groundMask;
     public float groundRay = 1.1f;
     public float raySpread = 0.3f;
+    public float jumpForce = 5;
 
 
     [HideInInspector] public Vector2 playerVelocity = new Vector2();
@@ -47,6 +48,11 @@ public class CharController : MonoBehaviour
         Vector2 movement = rb2d.velocity;
         movement.x = Input.GetAxis("Horizontal") * speed;
         playerVelocity = rb2d.velocity;
+
+        if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            movement.y = jumpForce;
+        }
 
         rb2d.velocity = movement;
 
@@ -89,7 +95,7 @@ public class CharController : MonoBehaviour
 
     public void GravityFlip()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if ((Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.RightShift)) && grounded)
         {
             rb2d.velocity = new Vector2(0, 0);
 
@@ -106,7 +112,7 @@ public class CharController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Dangerous"))
+        if (collision.gameObject.CompareTag("Dangerous") || collision.gameObject.CompareTag("Obstacle"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

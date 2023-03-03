@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dangerous
   - Ground
+  - Repaired
+  - Obstacle
   layers:
   - Default
   - TransparentFX
