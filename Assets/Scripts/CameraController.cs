@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     public float globalMinX;
     public float globalMinY;
 
+    public float offsetX = 0;
+
     void Start()
     {
 
@@ -19,17 +21,15 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        Vector3 start = transform.position;
+
         Vector3 goal = target.position + new Vector3(0.0f, 0.0f, -10);
-        float t = Time.deltaTime * speed;
-        Vector3 newPosition = Vector3.Lerp(start, goal, t);
         float maxX = globalMaxX - Camera.main.orthographicSize * Camera.main.aspect;
         float maxY = globalMaxY - Camera.main.orthographicSize;
         float minX = globalMinX + Camera.main.orthographicSize * Camera.main.aspect;
         float minY = globalMinY + Camera.main.orthographicSize;
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
-        transform.position = newPosition;
+        goal.x = Mathf.Clamp(goal.x, minX, maxX);
+        goal.y = Mathf.Clamp(goal.y, minY, maxY);
+        transform.position = goal;
     }
 
     private void OnDrawGizmosSelected()

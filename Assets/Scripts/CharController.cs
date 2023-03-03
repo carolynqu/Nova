@@ -95,7 +95,7 @@ public class CharController : MonoBehaviour
 
     public void GravityFlip()
     {
-        if ((Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.RightShift)) && grounded)
+        if ((Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded)
         {
             rb2d.velocity = new Vector2(0, 0);
 
