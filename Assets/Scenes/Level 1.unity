@@ -1596,6 +1596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107527991}
   - component: {fileID: 2107527990}
+  - component: {fileID: 2107527992}
   m_Layer: 0
   m_Name: purple400
   m_TagString: Repaired
@@ -1670,6 +1671,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2107527992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107527989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efbc7e8bf86a4c07aed2589c304bb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2111933099
 PrefabInstance:
   m_ObjectHideFlags: 0
