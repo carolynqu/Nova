@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6220111944505002354}
   - component: {fileID: 2451899646697433674}
   - component: {fileID: -911530312035663042}
+  - component: {fileID: -2662818061094414245}
   m_Layer: 0
   m_Name: steam1
   m_TagString: Obstacle
@@ -95,7 +96,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -219,3 +220,15 @@ PolygonCollider2D:
       - {x: 0.13499999, y: -2.7949998}
       - {x: 0.205, y: -2.745}
       - {x: 0.265, y: -2.675}
+--- !u!114 &-2662818061094414245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119176432887915453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efbc7e8bf86a4c07aed2589c304bb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

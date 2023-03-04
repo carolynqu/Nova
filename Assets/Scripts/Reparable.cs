@@ -6,7 +6,7 @@ public class Reparable : MonoBehaviour
 {
     public void FixIt()
     {
-        gameObject.tag = "Repaired";
+        Destroy(gameObject);
     }
 }
 //right now reparable doesn't do anything but change the tag so just check that the tag changes to see if it works

@@ -115,12 +115,17 @@ public class CharController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dangerous"))
         {
-            Physics2D.gravity = new Vector2(0, 10);
+            Physics2D.gravity = new Vector2(0, -10);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (collision.gameObject.CompareTag("Obstacle") && !holdingItem)
+    }
+
+    //make sure to check isTrigger for obstacles
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle") && !holdingItem)
         {
-            Physics2D.gravity = new Vector2(0, 10);
+            Physics2D.gravity = new Vector2(0, -10);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
