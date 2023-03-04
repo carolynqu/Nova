@@ -1257,6 +1257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6150626717887020670, guid: f94c7b9fd53ac41da9a7b5653c80f497, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6150626717887020671, guid: f94c7b9fd53ac41da9a7b5653c80f497, type: 3}
       propertyPath: m_Name
       value: OutofBounds

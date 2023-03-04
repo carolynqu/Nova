@@ -11,6 +11,7 @@ public class CharController : MonoBehaviour
     public float speed = 5;
 
     public bool grounded;
+    public bool holdingItem;
     public LayerMask groundMask;
     public float groundRay = 1.1f;
     public float raySpread = 0.3f;
@@ -112,8 +113,14 @@ public class CharController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Dangerous") || collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Dangerous"))
         {
+            Physics2D.gravity = new Vector2(0, 10);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (collision.gameObject.CompareTag("Obstacle") && !holdingItem)
+        {
+            Physics2D.gravity = new Vector2(0, 10);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

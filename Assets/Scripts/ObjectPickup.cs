@@ -5,7 +5,13 @@ using UnityEngine;
 public class ObjectPickup : MonoBehaviour
 {
     GameObject pickedItem;
+    CharController player;
     // Start is called before the first frame update
+    private void Start()
+    {
+
+        player = GetComponent<CharController>();
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -17,6 +23,7 @@ public class ObjectPickup : MonoBehaviour
             other.transform.localPosition = new Vector3(0.5f, 0, 0);
             other.GetComponent<Collider2D>().enabled = false;
             pickedItem = other.gameObject;
+            player.holdingItem = true;
 
         }
     }

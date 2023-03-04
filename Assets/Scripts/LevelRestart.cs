@@ -10,6 +10,7 @@ public class LevelRestart : MonoBehaviour
         Controller2D controller = collision.gameObject.GetComponent<Controller2D>();
         if(controller != null)
         {
+            Physics2D.gravity = new Vector2(0, 10);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
