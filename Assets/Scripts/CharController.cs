@@ -16,6 +16,7 @@ public class CharController : MonoBehaviour
     public float groundRay = 1.1f;
     public float raySpread = 0.3f;
     public float jumpForce = 5;
+    public float gravity = 10;
 
 
     [HideInInspector] public Vector2 playerVelocity = new Vector2();
@@ -102,11 +103,11 @@ public class CharController : MonoBehaviour
 
             if (Physics2D.gravity.y > 0)
             {
-                Physics2D.gravity = new Vector2(0, -10);
+                Physics2D.gravity = new Vector2(0, -1 * gravity);
             }
             else
             {
-                Physics2D.gravity = new Vector2(0, 10);
+                Physics2D.gravity = new Vector2(0, gravity);
             }
         }
     }
@@ -115,7 +116,7 @@ public class CharController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dangerous"))
         {
-            Physics2D.gravity = new Vector2(0, -10);
+            Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -125,7 +126,7 @@ public class CharController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle") && !holdingItem)
         {
-            Physics2D.gravity = new Vector2(0, -10);
+            Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
