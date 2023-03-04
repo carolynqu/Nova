@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2451899646697433674}
   - component: {fileID: -911530312035663042}
   - component: {fileID: -2662818061094414245}
+  - component: {fileID: -8127675163699185214}
   m_Layer: 0
   m_Name: steam1
   m_TagString: Obstacle
@@ -232,3 +233,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efbc7e8bf86a4c07aed2589c304bb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8127675163699185214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119176432887915453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d46be53b9b349da942c06c120bbb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFPS: 5
+  activeAnimation:
+  - {fileID: 21300000, guid: 653bb51ba62244ef9b35327e3bae99f3, type: 3}
+  - {fileID: 21300000, guid: a2d5fbf9dc298485a99052c4350be86b, type: 3}
+  - {fileID: 21300000, guid: 5d82c17e377a94a848ea9a2653a6e2f8, type: 3}
+  - {fileID: 21300000, guid: ccf36979170df4b668d4d5fd3bcfd012, type: 3}
+  - {fileID: 21300000, guid: f051ba4d88efd494cb29d012af800c2e, type: 3}
+  - {fileID: 21300000, guid: 4e23775bc99a04a888658fb0239d2ff5, type: 3}
