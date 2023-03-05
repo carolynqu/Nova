@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 663646734188446923}
   - component: {fileID: -3356723802416503082}
   - component: {fileID: 7216691783798098468}
+  - component: {fileID: 954499569249798362}
   m_Layer: 0
   m_Name: wires1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,3 +321,21 @@ PolygonCollider2D:
       - {x: -0.03142857, y: -0.5542857}
       - {x: -0.85142857, y: -0.5542857}
       - {x: -0.8485714, y: -0.5542857}
+--- !u!114 &954499569249798362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028120896965978026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d46be53b9b349da942c06c120bbb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFPS: 5
+  activeAnimation:
+  - {fileID: 21300000, guid: f64bc6a141eb54da8bf20af602a5af28, type: 3}
+  - {fileID: 21300000, guid: 5952a6c337252441aa4553feebf7349b, type: 3}
+  - {fileID: 21300000, guid: fdbcf75a3d2694558aa89a63db4c1fb2, type: 3}
+  - {fileID: 21300000, guid: c0b6694f4a1ec49089aa771dca891d64, type: 3}
