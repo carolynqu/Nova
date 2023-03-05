@@ -180,11 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744297e590d2542b9b848cec7e7f301d, type: 3}
---- !u!82 &141155338 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2375333439731121454, guid: 81b967795244b46859ae94016093d5eb, type: 3}
-  m_PrefabInstance: {fileID: 8576518283155783290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &214208107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -699,7 +694,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1194800276
 PrefabInstance:
@@ -854,7 +849,7 @@ PrefabInstance:
     - target: {fileID: 6820585837672610114, guid: 0a5f150a811dc4502a1eea861471d932, type: 3}
       propertyPath: Outofboundsound
       value: 
-      objectReference: {fileID: 141155338}
+      objectReference: {fileID: 8576518283155783291}
     - target: {fileID: 6820585837672610114, guid: 0a5f150a811dc4502a1eea861471d932, type: 3}
       propertyPath: Steamdeathsound
       value: 
@@ -1432,7 +1427,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d33b5fd717653431f9eab2c24087b207, type: 3}
 --- !u!82 &2036848903681334597 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5455934565935776548, guid: d33b5fd717653431f9eab2c24087b207, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4192388594794405377, guid: d33b5fd717653431f9eab2c24087b207, type: 3}
   m_PrefabInstance: {fileID: 2036848903681334596}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2154843670629537241
@@ -1608,7 +1603,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 3e0b37b7cbf2142f7aafb8863a2d96a1, type: 3}
 --- !u!82 &2542751007480595897 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8411213701460361790, guid: 3e0b37b7cbf2142f7aafb8863a2d96a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3221612338022998254, guid: 3e0b37b7cbf2142f7aafb8863a2d96a1, type: 3}
   m_PrefabInstance: {fileID: 2542751007480595896}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2560804883089686520
@@ -1841,7 +1836,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 86efda875584041138359d9694e4dbad, type: 3}
 --- !u!82 &5047369863460492014 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1295019070707743431, guid: 86efda875584041138359d9694e4dbad, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1234890055791744636, guid: 86efda875584041138359d9694e4dbad, type: 3}
   m_PrefabInstance: {fileID: 5047369863460492013}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6337418848329723092
@@ -2198,6 +2193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b967795244b46859ae94016093d5eb, type: 3}
+--- !u!82 &8576518283155783291 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6846762899686399069, guid: 81b967795244b46859ae94016093d5eb, type: 3}
+  m_PrefabInstance: {fileID: 8576518283155783290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8671059746089528398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2257,7 +2257,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 1d01c521186ce4192891ab4d3f2f9eeb, type: 3}
 --- !u!82 &8671059746089528399 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3433645312419522925, guid: 1d01c521186ce4192891ab4d3f2f9eeb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7379939351459710867, guid: 1d01c521186ce4192891ab4d3f2f9eeb, type: 3}
   m_PrefabInstance: {fileID: 8671059746089528398}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8755631020883188334
@@ -2319,7 +2319,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 73f9335910be54966a041ed6fc5e0908, type: 3}
 --- !u!82 &8755631020883188335 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1637787043612859966, guid: 73f9335910be54966a041ed6fc5e0908, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2493986020459160557, guid: 73f9335910be54966a041ed6fc5e0908, type: 3}
   m_PrefabInstance: {fileID: 8755631020883188334}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8814065358190965081
