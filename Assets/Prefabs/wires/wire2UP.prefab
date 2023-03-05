@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4207845388911793403}
   - component: {fileID: -5257470224613852010}
   - component: {fileID: 5780947614239225077}
+  - component: {fileID: 3139712697111707253}
   m_Layer: 0
   m_Name: wire2UP
   m_TagString: Obstacle
@@ -108,7 +109,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -347,3 +348,21 @@ PolygonCollider2D:
       - {x: -0.22571428, y: 0.18857142}
       - {x: -0.25428572, y: 0.16}
       - {x: -0.26857144, y: 0.16285715}
+--- !u!114 &3139712697111707253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207845388911793397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d46be53b9b349da942c06c120bbb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFPS: 5
+  activeAnimation:
+  - {fileID: 21300000, guid: 83f39b42f655b47d78eae1395ed1263f, type: 3}
+  - {fileID: 21300000, guid: 4155acd4ac0d442ca88164fddc0b3263, type: 3}
+  - {fileID: 21300000, guid: 64e0c043e167d41c8aa92c46b7ed600f, type: 3}
+  - {fileID: 21300000, guid: 337e02399492d4e04907ebc8417987ba, type: 3}
