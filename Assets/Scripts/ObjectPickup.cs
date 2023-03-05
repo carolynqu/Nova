@@ -23,7 +23,16 @@ public class ObjectPickup : MonoBehaviour
             other.transform.localPosition = new Vector3(0.5f, 0, 0);
             other.GetComponent<Collider2D>().enabled = false;
             pickedItem = other.gameObject;
-            player.holdingItem = true;
+
+            if(pickedItem.CompareTag("Tape"))
+            {
+                player.holdingTape = true;
+            }
+            if(pickedItem.CompareTag("Pliers"))
+            {
+                player.holdingPliers = true;
+            }
+                
 
         }
     }
@@ -42,7 +51,10 @@ public class ObjectPickup : MonoBehaviour
                 itemCollider.enabled = true;
                 //pickedItem.GetComponent<Rigidbody2D>.AddForce(new Vector2(5, 5));
                 pickedItem = null;
-                
+                player.holdingTape = false;
+                player.holdingPliers = false;
+
+
             }
         }
     }
@@ -51,7 +63,11 @@ public class ObjectPickup : MonoBehaviour
         Reparable item = other.GetComponent<Reparable>();
         if(item != null)
         {
-            if (pickedItem != null && other.CompareTag("Obstacle"))
+            if (pickedItem != null && other.CompareTag("Steam") && pickedItem.CompareTag("Tape"))
+            {
+                item.FixIt();
+            }
+            if (pickedItem != null && other.CompareTag("Wires") && pickedItem.CompareTag("Pliers"))
             {
                 item.FixIt();
             }

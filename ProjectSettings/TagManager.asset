@@ -9,6 +9,10 @@ TagManager:
   - Repaired
   - Obstacle
   - NextLevel
+  - Pliers
+  - Tape
+  - Steam
+  - Wires
   layers:
   - Default
   - TransparentFX

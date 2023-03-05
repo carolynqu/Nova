@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8654466661600843107}
   m_Layer: 0
   m_Name: steam1
-  m_TagString: Obstacle
+  m_TagString: Steam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

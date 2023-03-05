@@ -11,11 +11,12 @@ public class CharController : MonoBehaviour
     public float speed = 5;
 
     public bool grounded;
-    public bool holdingItem;
+    public bool holdingTape;
+    public bool holdingPliers;
     public LayerMask groundMask;
     public float groundRay = 1.1f;
     public float raySpread = 0.3f;
-    public float jumpForce = 5;
+  
     public float gravity = 10;
 
 
@@ -23,9 +24,9 @@ public class CharController : MonoBehaviour
 
     private SpriteRenderer mySpriteRenderer;
 
-    public AudioClip jumpsound;
+    public AudioClip gravitysound;
     public AudioClip deathsound;
-    public AudioClip objectound;
+    public AudioClip objectsound;
     public AudioClip repairsound;
     private AudioSource audioSource;
     // Start is called before the first frame update
@@ -50,11 +51,6 @@ public class CharController : MonoBehaviour
         Vector2 movement = rb2d.velocity;
         movement.x = Input.GetAxis("Horizontal") * speed;
         playerVelocity = rb2d.velocity;
-
-        if (Input.GetKey(KeyCode.Space) && grounded)
-        {
-            movement.y = jumpForce;
-        }
 
         rb2d.velocity = movement;
 
@@ -97,7 +93,7 @@ public class CharController : MonoBehaviour
 
     public void GravityFlip()
     {
-        if ((Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rb2d.velocity = new Vector2(0, 0);
 
@@ -119,7 +115,7 @@ public class CharController : MonoBehaviour
             Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (collision.gameObject.CompareTag("NextLevel") && holdingItem)
+        if (collision.gameObject.CompareTag("NextLevel"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -128,7 +124,12 @@ public class CharController : MonoBehaviour
     //make sure to check isTrigger for obstacles
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Obstacle") && !holdingItem)
+        if (other.gameObject.CompareTag("Steam") && !holdingTape)
+        {
+            Physics2D.gravity = new Vector2(0, -1 * gravity);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else if (other.gameObject.CompareTag("Wires") && !holdingPliers)
         {
             Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
