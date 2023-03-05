@@ -68,12 +68,12 @@ public class Animator2D : MonoBehaviour
             mySpriteRenderer.flipX = false;
         }
 
-        if (controller.playerVelocity.y < -0.01f)
+        if (controller.playerVelocity.y < -0.1f)
         {
             mySpriteRenderer.flipY = false;
         }
 
-        if (controller.playerVelocity.y > 0.01f)
+        if (controller.playerVelocity.y > 0.1f)
         {
             mySpriteRenderer.flipY = true;
         }
