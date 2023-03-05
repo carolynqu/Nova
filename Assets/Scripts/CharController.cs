@@ -24,20 +24,18 @@ public class CharController : MonoBehaviour
 
     private SpriteRenderer mySpriteRenderer;
 
-    public AudioClip gravitysound;
-    public AudioClip outofboundsound;
-    public AudioClip objectsound;
-    public AudioClip repairsound;
-    public AudioClip steamdeathsound;
-    public AudioClip wiredeathsound;
-    public AudioClip nextlevelsound;
+    public AudioSource Gravitysound;
+    public AudioSource Outofboundsound;
+    public AudioSource Objectsound;
+    public AudioSource Repairsound;
+    public AudioSource Steamdeathsound;
+    public AudioSource Wiredeathsound;
+    public AudioSource Nextlevelsound;
 
-    private AudioSource audioSource;
     // Start is called before the first frame update
     public void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -100,7 +98,8 @@ public class CharController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rb2d.velocity = new Vector2(0, 0);
-            audioSource.PlayOneShot(gravitysound);
+            Gravitysound.Play();
+
             if (Physics2D.gravity.y > 0)
             {
                 Physics2D.gravity = new Vector2(0, -1 * gravity);  
@@ -117,13 +116,13 @@ public class CharController : MonoBehaviour
         //for out of bounds
         if (collision.gameObject.CompareTag("Dangerous"))
         {
-            audioSource.PlayOneShot(outofboundsound);
+            Outofboundsound.Play();
             Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (collision.gameObject.CompareTag("NextLevel"))
         {
-            audioSource.PlayOneShot(nextlevelsound);
+            Nextlevelsound.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -133,13 +132,14 @@ public class CharController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Steam") && !holdingTape)
         {
-            audioSource.PlayOneShot(steamdeathsound);
+            Steamdeathsound.Play();
+
             Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (other.gameObject.CompareTag("Wires") && !holdingPliers)
         {
-            audioSource.PlayOneShot(wiredeathsound);
+            Wiredeathsound.Play();
             Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -147,6 +147,6 @@ public class CharController : MonoBehaviour
 
     public void CollectObject()
     {
-        audioSource.PlayOneShot(objectsound);
+        Objectsound.Play();
     }
 }
