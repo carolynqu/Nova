@@ -23,8 +23,9 @@ public class ObjectPickup : MonoBehaviour
             other.transform.localPosition = new Vector3(0.5f, 0, 0);
             other.GetComponent<Collider2D>().enabled = false;
             pickedItem = other.gameObject;
+            player.CollectObject();
 
-            if(pickedItem.CompareTag("Tape"))
+            if (pickedItem.CompareTag("Tape"))
             {
                 player.holdingTape = true;
             }
@@ -50,6 +51,7 @@ public class ObjectPickup : MonoBehaviour
                 //itemCollider.isTrigger = true;
                 itemCollider.enabled = true;
                 //pickedItem.GetComponent<Rigidbody2D>.AddForce(new Vector2(5, 5));
+                pickedItem.transform.SetParent(null);
                 pickedItem = null;
                 player.holdingTape = false;
                 player.holdingPliers = false;

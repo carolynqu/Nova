@@ -67,6 +67,16 @@ public class Animator2D : MonoBehaviour
         {
             mySpriteRenderer.flipX = false;
         }
+
+        if (controller.playerVelocity.y < -0.01f)
+        {
+            mySpriteRenderer.flipY = false;
+        }
+
+        if (controller.playerVelocity.y > 0.01f)
+        {
+            mySpriteRenderer.flipY = true;
+        }
     }
 
     void TransitionToState(AnimationState newState)
@@ -78,7 +88,7 @@ public class Animator2D : MonoBehaviour
 
     AnimationState GetAnimationState()
     {
-        if (!controller.grounded)
+        if (!controller.grounded && (controller.playerVelocity.y > 0.01f))
         {
             return AnimationState.Gravity;
         }
