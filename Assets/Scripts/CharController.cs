@@ -119,6 +119,10 @@ public class CharController : MonoBehaviour
             Physics2D.gravity = new Vector2(0, -1 * gravity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if (collision.gameObject.CompareTag("NextLevel") && holdingItem)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     //make sure to check isTrigger for obstacles

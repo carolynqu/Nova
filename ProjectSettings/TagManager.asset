@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Repaired
   - Obstacle
+  - NextLevel
   layers:
   - Default
   - TransparentFX
