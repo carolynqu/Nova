@@ -49,7 +49,7 @@ public class ObjectPickup : MonoBehaviour
             {
                 Collider2D itemCollider = pickedItem.GetComponent<Collider2D>();
                 //itemCollider.isTrigger = true;
-                itemCollider.enabled = true;
+                //itemCollider.enabled = true;
                 //pickedItem.GetComponent<Rigidbody2D>.AddForce(new Vector2(5, 5));
                 pickedItem.transform.SetParent(null);
                 pickedItem = null;
